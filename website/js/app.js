@@ -52,7 +52,7 @@ $(document).ready(function() {
 
     // uncheck selections on click 'remove'
     $('.remove').on('click', function(e) {
-        if ($(this).find("img").length > 0) {
+        if ($(this).find("a").length > 0) {
             // this is a locked item - do nothing
         } else {
             // otherwise - uncheck it and it'll be removed from sidebar
@@ -82,6 +82,9 @@ $(document).ready(function() {
     });
     $('#iaas-accordion-header').on('click', function() {
         $('#iaas-sidebar').show();
+    });
+    $('#empty-stack').on('click', function() {
+        $('#stack-sidebar').show();
     });
 
 
@@ -139,7 +142,7 @@ function buildSidebar() {
             var tableRowClass = $(this).closest('.columns').find('input').attr('id');
 
             // build unique table row with that name
-            var buildRow = '<tr class=' + tableRowClass + '><td class="selection">' + $(this).text() + '</td><td class="remove"><span>Remove</span></td></tr>'
+            var buildRow = '<tr class=' + tableRowClass + '><td class="selection">' + $(this).text() + '</td><td class="remove"><span><img src="/images/delete.png"></span></td></tr>'
 
             // update table in sidebar
             $(tableId).append(buildRow);

@@ -229,7 +229,7 @@ table td.remove .locked-icon {
 }
 
 .selection-sidebar-header {
-    background: #020000;
+    background: url("/images/section-stack.png");
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -238,6 +238,9 @@ table td.remove .locked-icon {
 .selection-sidebar-bottom {
     text-align: right;
     margin-bottom: 200px;
+    position: fixed;
+    margin-left: 2.5%;
+    top: 88%;
 }
 
 table {
@@ -300,7 +303,9 @@ form h3 span {
 
 form #submit-button {
     color: #fff;
-    background: #bc202a;
+    background: url("/images/section-stack.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     text-transform: uppercase;
     text-align: center;
     padding: 20px 60px;
@@ -455,8 +460,8 @@ fieldset .row:nth-child(2) {
 #tech-stack .ui-widget-content .ui-state-active,
 #tech-stack .ui-widget-header .ui-state-active {
     border: none;
-    background: #bc202a;
-    color: #fff;
+    /*background: #bc202a;
+    color: #fff;*/
     outline: none;
 }
 
@@ -467,8 +472,8 @@ fieldset .row:nth-child(2) {
 #tech-stack .ui-widget-content .ui-state-default,
 #tech-stack .ui-widget-header .ui-state-default {
     border: none;
-    background: #bc202a;
-    color: #fff;
+    /*background: #bc202a;
+    color: #fff;*/
     outline: none;
 }
 
@@ -476,7 +481,7 @@ fieldset .row:nth-child(2) {
 /* accordion content */
 
 .acc-header {
-    background: #bc202a !important;
+    /*background: #bc202a !important;*/
     overflow: auto;
     color: #fff;
     position: relative;
@@ -491,6 +496,30 @@ fieldset .row:nth-child(2) {
     position: absolute;
 }
 
+.app-dev-header {
+    background-image: url("/images/section-appDev.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.dev-ops-header {
+    background-image: url("/images/section-devOps.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.host-infra-header {
+    background-image: url("/images/section-infrastructure.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.container-platform-header {
+    background-image: url("/images/section-container.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 .acc-left span {
     display: block;
 }
@@ -498,7 +527,7 @@ fieldset .row:nth-child(2) {
 .acc-sprite {
     display: block;
     width: 70px;
-    background: #981c1f;
+    /*background: #981c1f;*/
     color: #fff;
     height: 100%;
     float: left;
@@ -563,8 +592,22 @@ fieldset .row:nth-child(2) {
     cursor: pointer;
 }
 
-.tool-tip {
+.tooltip {
     font-family: 'Overpass_Regular';
+    background-color: white !important;
+    color: #000000;
+    border: 5px solid #cc0000;
+}
+
+.tooltip-appdev {
+    font-family: 'Overpass_Regular';
+    background-color: white !important;
+    color: #000000;
+    border: 5px solid #8bc63f !important;
+}
+
+.tooltip>.nub {
+    border-color: transparent transparent #cc0000;
 }
 
 
@@ -576,7 +619,24 @@ fieldset .row:nth-child(2) {
     width: 0;
     height: 0;
     border: inset 0.75rem;
-    border-color: transparent transparent #0a0a0a;
+    border-color: transparent transparent #cc0000;
+    border-bottom-style: solid;
+    border-top-width: 0;
+    bottom: 100%;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.tooltip::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 0.75rem;
+    border-color: transparent transparent #cc0000;
     border-bottom-style: solid;
     border-top-width: 0;
     bottom: 100%;
@@ -960,7 +1020,7 @@ ul.parsley-errors-list li {
 }
 
 #links {
-    padding-top:30px;
+    padding-top: 30px;
     padding-bottom: 80px;
 }
 
@@ -1264,7 +1324,7 @@ ul.parsley-errors-list li {
     }
     /* back links */
     #links {
-        padding-top:30px;
+        padding-top: 30px;
         padding-bottom: 10px;
         text-align: center;
     }
@@ -1333,13 +1393,14 @@ ul.parsley-errors-list li {
     .jssocials-share-link {
         width: 200px;
     }
-     /* back links */
+    /* back links */
     #links {
-        padding-top:30px;
+        padding-top: 30px;
         padding-bottom: 10px;
         text-align: center;
     }
-    #links .float-left, #links .float-right {
+    #links .float-left,
+    #links .float-right {
         float: none !important;
     }
     #links.conf-body {
@@ -1358,7 +1419,6 @@ ul.parsley-errors-list li {
         padding: 20px;
         font-size: 14px;
     }
-
 }
 
 
