@@ -200,7 +200,7 @@ table tbody th {
 #devops-tools-sidebar,
 #container-platform-sidebar,
 #iaas-sidebar {
-    display: none;
+    display: block;
 }
 
 .selection-sidebar-section .remove {
@@ -224,7 +224,7 @@ table td.remove .locked-icon {
 }
 
 .selection-sidebar-top {
-    background: #fff;
+    background: white;
     margin-bottom: 20px;
 }
 
@@ -460,8 +460,8 @@ fieldset .row:nth-child(2) {
 #tech-stack .ui-widget-content .ui-state-active,
 #tech-stack .ui-widget-header .ui-state-active {
     border: none;
-    /*background: #bc202a;
-    color: #fff;*/
+    /*background: #bc202a;*/
+    color: #fff;
     outline: none;
 }
 
@@ -472,8 +472,8 @@ fieldset .row:nth-child(2) {
 #tech-stack .ui-widget-content .ui-state-default,
 #tech-stack .ui-widget-header .ui-state-default {
     border: none;
-    /*background: #bc202a;
-    color: #fff;*/
+    /*background: #bc202a;*/
+    color: #fff;
     outline: none;
 }
 
@@ -592,13 +592,6 @@ fieldset .row:nth-child(2) {
     cursor: pointer;
 }
 
-.tooltip {
-    font-family: 'Overpass_Regular';
-    background-color: white !important;
-    color: #000000;
-    border: 5px solid #cc0000;
-}
-
 .tooltip-appdev {
     font-family: 'Overpass_Regular';
     background-color: white !important;
@@ -606,46 +599,186 @@ fieldset .row:nth-child(2) {
     border: 5px solid #8bc63f !important;
 }
 
-.tooltip>.nub {
-    border-color: transparent transparent #cc0000;
+.tooltip-devops {
+    font-family: 'Overpass_Regular';
+    background-color: white !important;
+    color: #000000;
+    border: 5px solid #efa926 !important;
 }
 
+.tooltip-container {
+    font-family: 'Overpass_Regular';
+    background-color: white !important;
+    color: #000000;
+    border: 5px solid #00bee4 !important;
+}
 
-/* fix foundation tooltip bug */
+.tooltip-iaas {
+    font-family: 'Overpass_Regular';
+    background-color: white !important;
+    color: #000000;
+    border: 5px solid #402a7d !important;
+}
+
+.tooltip::before,
+.tooltip.top::before,
+.tooltip.left::before,
+.tooltip.right::before,
+.tooltip-appdev::before,
+.tooltip-appdev.top::before,
+.tooltip-appdev.left::before,
+.tooltip-appdev.right::before,
+.tooltip-devops::before,
+.tooltip-devops.top::before,
+.tooltip-devops.left::before,
+.tooltip-devops.right::before,
+.tooltip-container::before,
+.tooltip-container.top::before,
+.tooltip-container.left::before,
+.tooltip-container.right::before,
+.tooltip-iaas::before,
+.tooltip-iaas.top::before,
+.tooltip-iaas.left::before,
+.tooltip-iaas.right::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 0.75rem;
+    position: absolute
+}
+
+.tooltip::before,
+.tooltip.left::before,
+.tooltip.right::before,
+.tooltip-appdev::before,
+.tooltip-appdev.left::before,
+.tooltip-appdev.right::before,
+.tooltip-devops::before,
+.tooltip-devops.left::before,
+.tooltip-devops.right::before,
+.tooltip-container::before,
+.tooltip-container.left::before,
+.tooltip-container.right::before,
+.tooltip-iaas::before,
+.tooltip-iaas.left::before,
+.tooltip-iaas.right::before {
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+.tooltip.left::before,
+.tooltip.right::before,
+.tooltip-appdev.left::before,
+.tooltip-appdev.right::before,
+.tooltip-devops.left::before,
+.tooltip-devops.right::before,
+.tooltip-container.left::before,
+.tooltip-container.right::before,
+.tooltip-iaas.left::before,
+.tooltip-iaas.right::before {
+    bottom: auto;
+    top: 50%
+}
 
 .tooltip::before {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    border: inset 0.75rem;
-    border-color: transparent transparent #cc0000;
+    border-color: transparent transparent #0a0a0a;
     border-bottom-style: solid;
     border-top-width: 0;
     bottom: 100%;
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    left: 50%
 }
 
-.tooltip::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    border: inset 0.75rem;
-    border-color: transparent transparent #cc0000;
+.tooltip-appdev::before {
+    border-color: transparent transparent #8bc63f;
     border-bottom-style: solid;
     border-top-width: 0;
     bottom: 100%;
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    left: 50%
 }
+
+.tooltip-devops::before {
+    border-color: transparent transparent #efa926;
+    border-bottom-style: solid;
+    border-top-width: 0;
+    bottom: 100%;
+    left: 50%
+}
+
+.tooltip-container::before {
+    border-color: transparent transparent #00bee4;
+    border-bottom-style: solid;
+    border-top-width: 0;
+    bottom: 100%;
+    left: 50%
+}
+
+.tooltip-iaas::before {
+    border-color: transparent transparent #402a7d;
+    border-bottom-style: solid;
+    border-top-width: 0;
+    bottom: 100%;
+    left: 50%
+}
+
+.tooltip.top::before {
+    border-color: #0a0a0a transparent transparent;
+    border-top-style: solid;
+    border-bottom-width: 0;
+    top: 100%;
+    bottom: auto
+}
+
+.tooltip-appdev.top::before {
+    border-color: #8bc63f transparent transparent;
+    border-top-style: solid;
+    border-bottom-width: 0;
+    top: 100%;
+    bottom: auto
+}
+
+.tooltip-devops.top::before {
+    border-color: #efa926 transparent transparent;
+    border-top-style: solid;
+    border-bottom-width: 0;
+    top: 100%;
+    bottom: auto
+}
+
+.tooltip-container.top::before {
+    border-color: #00bee4 transparent transparent;
+    border-top-style: solid;
+    border-bottom-width: 0;
+    top: 100%;
+    bottom: auto
+}
+
+.tooltip-iaas.top::before {
+    border-color: #402a7d transparent transparent;
+    border-top-style: solid;
+    border-bottom-width: 0;
+    top: 100%;
+    bottom: auto
+}
+
+.tooltip.left::before {
+    border-color: transparent transparent transparent #0a0a0a;
+    border-left-style: solid;
+    border-right-width: 0;
+    left: 100%
+}
+
+.tooltip.right::before {
+    border-color: transparent #0a0a0a transparent transparent;
+    border-right-style: solid;
+    border-left-width: 0;
+    left: auto;
+    right: 100%
+}
+
+
+/*/////////////////////////////////////////////////////////////////*/
 
 
 /* parsley error styles */
@@ -663,6 +796,11 @@ ul.parsley-errors-list li {
     list-style-type: none;
     color: #bc202a;
     ;
+}
+
+/* checkbox colours */
+.checkbox-appdev + label:after {
+    background-color: #8bc63f;
 }
 
 

@@ -12,6 +12,13 @@ $(document).ready(function() {
         heightStyle: "content"
     });
 
+    // init selection accordion
+    $("#selection-accordion").accordion({
+        collapsible: true,
+        active: 'none',
+        heightStyle: "content"
+    });
+
     // swap +/i on accordion click
     $('.ui-state-default').on('click', function() {
         var thisOne = $(this).find('.acc-sprite span');
@@ -64,9 +71,9 @@ $(document).ready(function() {
 
 
     // show sidebar sections in parallel to using accordion
-    $('.acc-header').on('click', function() {
-        $('#empty-stack').hide();
-    });
+    // $('.acc-header').on('click', function() {
+    //     $('#empty-stack').hide();
+    // });
 
     $('.acc-header').on('click', function(){
         $('#automation-sidebar').show();
@@ -83,9 +90,14 @@ $(document).ready(function() {
     $('#iaas-accordion-header').on('click', function() {
         $('#iaas-sidebar').show();
     });
-    $('#empty-stack').on('click', function() {
-        $('#stack-sidebar').show();
-    });
+    // $('.selection-sidebar-section').on('click', function() {
+    //     $('#empty-stack').show();
+    //     $('#automation-sidebar').hide();
+    //     $('#iaas-sidebar').hide();
+    //     $('#container-platform-sidebar').hide();
+    //     $('#application-development-sidebar').hide();
+    //     $('#devops-tools-sidebar').hide();
+    // });
 
 
 
