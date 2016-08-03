@@ -798,10 +798,9 @@ ul.parsley-errors-list li {
     ;
 }
 
+
 /* checkbox colours */
-.checkbox-appdev + label:after {
-    background-color: #8bc63f;
-}
+
 
 
 /* confirmation page styles */
